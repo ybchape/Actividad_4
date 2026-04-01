@@ -1,25 +1,69 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var SPEED = 500.0
+@export var SALTO = -650.0
+@export var GRAVEDAD = 2000.0
+@export var VELOCIDAD_DASH = 1200.0
+@export var DURACION_DASH = 0.2
 
+var haciendo_dash = false
+var direccion_mirada = 1
+@onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	# Gravedad
+	if not is_on_floor() and not haciendo_dash:
+		velocity.y += GRAVEDAD * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#Salto
+	if is_on_floor() and Input.is_action_just_pressed("move_salto") and not haciendo_dash:
+			velocity.y = SALTO 
+	if Input.is_action_just_released("move_salto") and velocity.y < 0:
+		velocity.y = velocity.y * 0.5
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	# Dash
+	if Input.is_action_just_pressed("move_dash") and not haciendo_dash:
+		ejecutar_dash()
+
+	
+	# Direccion
+	var direction := Input.get_axis("move_izquierda","move_derecha")
+	if haciendo_dash:
+		velocity.y = 0
+		velocity.x = direccion_mirada * VELOCIDAD_DASH
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if direction !=0:
+			velocity.x = direction * SPEED
+			direccion_mirada = direction
+			anim.flip_h = (direccion_mirada ==-1) 
+		else:
+			velocity.x = 0
 
+	#Control de animacion
+	actualizar_animacion(direction)
 	move_and_slide()
+	
+func actualizar_animacion(direction):
+	#dash
+	if haciendo_dash:
+		anim.play("Dash ")
+		return
+	#aire (salto)
+	if not is_on_floor():
+		anim.play("salto")
+	
+	#MOVIMIENTO SUELO
+	else:
+		if Input.is_action_just_pressed("move_abajo"):
+			anim.play("abajo")
+		elif direction !=0:
+			anim.play("Correr")
+		else:
+			anim.play("Idle")		
+
+func ejecutar_dash():
+	haciendo_dash = true
+	await get_tree().create_timer(DURACION_DASH).timeout
+	haciendo_dash = false
+	velocity.x = direccion_mirada * SPEED  
