@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var SPEED = 500.0
 @export var SALTO = -650.0
 @export var GRAVEDAD = 2000.0

@@ -271,13 +271,17 @@ animations = [{
 radius = 41.0
 height = 146.0
 
-[node name="Personaje" type="CharacterBody2D" unique_id=1184970518]
+[node name="Node2D" type="Node2D" unique_id=408588709]
+
+[node name="Personaje" type="CharacterBody2D" parent="." unique_id=1184970518]
+position = Vector2(89, 841)
 script = ExtResource("1_eba6i")
-SPEED = 300.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1885919175]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Personaje" unique_id=1885919175]
+position = Vector2(-89, -841)
 sprite_frames = SubResource("SpriteFrames_bdo3w")
-animation = &"salto"
+animation = &"Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=925388046]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje" unique_id=925388046]
+position = Vector2(-89, -841)
 shape = SubResource("CapsuleShape2D_d5xxh")
