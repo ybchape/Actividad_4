@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var SPEED = 500.0
+@export var SPEED = 300.0
 @export var SALTO = -650.0
 @export var GRAVEDAD = 2000.0
 @export var VELOCIDAD_DASH = 1200.0
-@export var DURACION_DASH = 0.2
-
+@export var DURACION_DASH = 0.3
+ 
 var haciendo_dash = false
 var direccion_mirada = 1
 @onready var anim = $AnimatedSprite2D
@@ -41,12 +41,13 @@ func _physics_process(delta: float) -> void:
 
 	#Control de animacion
 	actualizar_animacion(direction)
-	move_and_slide()
 	
+	move_and_slide()
+	position.x = clamp(position.x,0,1920)
 func actualizar_animacion(direction):
 	#dash
 	if haciendo_dash:
-		anim.play("Dash ")
+		anim.play("Dash")
 		return
 	#aire (salto)
 	if not is_on_floor():
@@ -54,8 +55,9 @@ func actualizar_animacion(direction):
 	
 	#MOVIMIENTO SUELO
 	else:
-		if Input.is_action_just_pressed("move_abajo"):
+		if Input.is_action_pressed("move_abajo"):
 			anim.play("abajo")
+			velocity.x = 0 
 		elif direction !=0:
 			anim.play("Correr")
 		else:

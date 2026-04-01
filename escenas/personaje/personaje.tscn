@@ -25,14 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://c4wgsmc3fqxty" path="res://imagenes/dash/Ground/cuphead_dash_0004.png" id="23_ssu7t"]
 [ext_resource type="Texture2D" uid="uid://b8jlmm0sm0ei5" path="res://imagenes/dash/Ground/cuphead_dash_0005.png" id="24_afwk7"]
 [ext_resource type="Texture2D" uid="uid://dg48f1nfd0nbj" path="res://imagenes/dash/Ground/cuphead_dash_0006.png" id="25_g8siq"]
-[ext_resource type="Texture2D" uid="uid://bgpplqik52tm6" path="res://imagenes/dash/Air/0.png" id="26_mnvmm"]
-[ext_resource type="Texture2D" uid="uid://du35sc3ytum00" path="res://imagenes/dash/Air/1.png" id="27_ciabf"]
-[ext_resource type="Texture2D" uid="uid://d0yy84v01nnxl" path="res://imagenes/dash/Air/cuphead_dash_air_0001.png" id="28_4h25p"]
-[ext_resource type="Texture2D" uid="uid://ohcvihq2l0fi" path="res://imagenes/dash/Air/cuphead_dash_air_0002.png" id="29_fjquy"]
-[ext_resource type="Texture2D" uid="uid://bb5ubaa1e8w32" path="res://imagenes/dash/Air/cuphead_dash_air_0003.png" id="30_w8clm"]
-[ext_resource type="Texture2D" uid="uid://df8t2tpjntter" path="res://imagenes/dash/Air/cuphead_dash_air_0004.png" id="31_e1ndh"]
-[ext_resource type="Texture2D" uid="uid://be736jhk1y7tj" path="res://imagenes/dash/Air/cuphead_dash_air_0005.png" id="32_ta60y"]
-[ext_resource type="Texture2D" uid="uid://ct2bjcb6tctp7" path="res://imagenes/dash/Air/cuphead_dash_air_0006.png" id="33_4rlgb"]
 [ext_resource type="Texture2D" uid="uid://dvwi3s0ow5glb" path="res://imagenes/idle/cuphead_idle_0001.png" id="34_cyn1g"]
 [ext_resource type="Texture2D" uid="uid://d2iyguq40y761" path="res://imagenes/idle/cuphead_idle_0002.png" id="35_vu18m"]
 [ext_resource type="Texture2D" uid="uid://cfrrsg3pib361" path="res://imagenes/idle/cuphead_idle_0003.png" id="36_wv0tm"]
@@ -113,7 +105,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Correr",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -140,38 +132,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_g8siq")
 }],
-"loop": true,
-"name": &"Dash ",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_mnvmm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_ciabf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_4h25p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_fjquy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_w8clm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_e1ndh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_ta60y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_4rlgb")
-}],
-"loop": true,
-"name": &"Dash Air",
-"speed": 5.0
+"loop": false,
+"name": &"Dash",
+"speed": 28.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -198,44 +161,44 @@ animations = [{
 "texture": ExtResource("39_8rv5v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_ssu7t")
+"texture": ExtResource("50_4rlgb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_afwk7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_g8siq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_mnvmm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_ciabf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_4h25p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_fjquy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_w8clm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_e1ndh")
+"texture": ExtResource("51_cyn1g")
 }, {
 "duration": 1.0,
 "texture": ExtResource("49_ta60y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_4rlgb")
+"texture": ExtResource("48_e1ndh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_cyn1g")
+"texture": ExtResource("47_w8clm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_fjquy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_4h25p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ciabf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_mnvmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_g8siq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_afwk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ssu7t")
 }],
 "loop": true,
 "name": &"abajo",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -264,24 +227,24 @@ animations = [{
 }],
 "loop": true,
 "name": &"salto",
-"speed": 5.0
+"speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5xxh"]
-radius = 41.0
-height = 146.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rv5v"]
+size = Vector2(98, 142)
 
 [node name="Node2D" type="Node2D" unique_id=408588709]
 
 [node name="Personaje" type="CharacterBody2D" parent="." unique_id=1184970518]
-position = Vector2(89, 841)
+position = Vector2(172, 848)
 script = ExtResource("1_eba6i")
+SPEED = 500.0
+SALTO = -900.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Personaje" unique_id=1885919175]
-position = Vector2(-89, -841)
 sprite_frames = SubResource("SpriteFrames_bdo3w")
-animation = &"Idle"
+animation = &"salto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje" unique_id=925388046]
-position = Vector2(-89, -841)
-shape = SubResource("CapsuleShape2D_d5xxh")
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_8rv5v")
