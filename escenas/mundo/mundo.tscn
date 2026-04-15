@@ -236,11 +236,11 @@ shape = SubResource("RectangleShape2D_kr5hx")
 position = Vector2(-16, 73)
 
 [node name="Enemi" parent="." unique_id=1547758572 instance=ExtResource("3_gccr3")]
-position = Vector2(4724, 588)
+position = Vector2(4804, 783)
 
 [node name="Enemi2" parent="." unique_id=1829584462 instance=ExtResource("3_gccr3")]
-position = Vector2(3835, 574)
+position = Vector2(3895, 641)
 scale = Vector2(0.3, 0.3)
 
 [node name="Enemi3" parent="." unique_id=173389059 instance=ExtResource("3_gccr3")]
-position = Vector2(2472, 346)
+position = Vector2(2654, 515)

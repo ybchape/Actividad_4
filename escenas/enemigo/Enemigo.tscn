@@ -10,11 +10,9 @@ size = Vector2(182, 188)
 [node name="Enemigo" type="CharacterBody2D" parent="." unique_id=1425928115]
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemigo" unique_id=1922601245]
-modulate = Color(0.99999994, 0.27691147, 0.18381804, 0.9843137)
-position = Vector2(223, 193)
+modulate = Color(1, 0.2784314, 0.18431373, 0.3764706)
 scale = Vector2(1.6484375, 1.578125)
 texture = ExtResource("1_vcr6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo" unique_id=826686553]
-position = Vector2(220, 194)
 shape = SubResource("RectangleShape2D_3ydiv")
