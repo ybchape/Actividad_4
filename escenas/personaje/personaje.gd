@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	actualizar_animacion(direction)
 	
 	move_and_slide()
-	position.x = clamp(position.x,0,1920)
+	#position.x = clamp(position.x,0,1920) # restrincion de pantalla
 func actualizar_animacion(direction):
 	#dash
 	if haciendo_dash:
