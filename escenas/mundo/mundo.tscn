@@ -31,8 +31,11 @@ size = Vector2(467, 111)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gak77"]
 size = Vector2(186.5, 107.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1nmh"]
+size = Vector2(116, 117)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kr5hx"]
-size = Vector2(117, 116)
+size = Vector2(117, 1177)
 
 [node name="Mundo" type="Node2D" unique_id=967528985]
 
@@ -199,8 +202,34 @@ position = Vector2(0, -0.50001335)
 scale = Vector2(1, 1.0078127)
 texture = ExtResource("1_ifx4l")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cajas5" unique_id=1279957568]
-position = Vector2(-0.5, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cajas5" unique_id=1606944058]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_u1nmh")
+
+[node name="Cajas7" type="StaticBody2D" parent="." unique_id=180197686]
+position = Vector2(-61, 972)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Cajas7" unique_id=1208310729]
+position = Vector2(0, -379.49997)
+scale = Vector2(1, 9.742187)
+texture = ExtResource("1_ifx4l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cajas7" unique_id=1890600947]
+position = Vector2(-0.5, -376.5)
+shape = SubResource("RectangleShape2D_kr5hx")
+
+[node name="Cajas8" type="StaticBody2D" parent="." unique_id=1422479556]
+position = Vector2(5888, 909)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Cajas8" unique_id=170935282]
+position = Vector2(0, -379.49997)
+scale = Vector2(1, 9.742187)
+texture = ExtResource("1_ifx4l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cajas8" unique_id=635563901]
+position = Vector2(-0.5, -376.5)
 shape = SubResource("RectangleShape2D_kr5hx")
 
 [node name="Perso" parent="." unique_id=408588709 instance=ExtResource("1_kovff")]
